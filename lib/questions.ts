@@ -6,7 +6,7 @@ export type Question = {
   explanation: string;
 };
 
-export const QUIZ_TITLE = "Calidad y Pruebas de Software";
+export const QUIZ_TITLE = "Calidad de software y pruebas automatizadas";
 
 export const questions: Question[] = [
   {

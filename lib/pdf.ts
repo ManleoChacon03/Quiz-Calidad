@@ -192,7 +192,7 @@ export async function generateCertificate(
   doc.setFontSize(8.5);
   doc.setTextColor(...grey);
   doc.text(
-    "Documento generado automáticamente por la aplicación del cuestionario. No requiere firma.",
+    "Documento generado automáticamente por la aplicación del cuestionario.",
     marginX,
     footerY
   );
