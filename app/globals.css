@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background-image:
+    linear-gradient(rgba(18, 32, 58, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18, 32, 58, 0.035) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: -1px -1px;
+}
+
+::selection {
+  background: #B3132B;
+  color: #F7F4EC;
+}
+
+:focus-visible {
+  outline: 2px solid #B3132B;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.status-tick {
+  font-variant-numeric: tabular-nums;
+}
