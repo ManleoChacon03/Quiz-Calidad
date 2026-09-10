@@ -5,6 +5,7 @@ import LoginScreen from "@/components/LoginScreen";
 import QuizScreen from "@/components/QuizScreen";
 import ResultsScreen from "@/components/ResultsScreen";
 import type { Answer, Stage, Student } from "@/lib/types";
+import DevToolsGuard from "@/components/DevToolsGuard";
 
 export default function Home() {
   const [stage, setStage] = useState<Stage>("login");
@@ -27,19 +28,25 @@ export default function Home() {
     setStage("login");
   }
 
+  let content;
   if (stage === "login" || !student) {
-    return <LoginScreen onStart={handleStart} />;
-  }
-
-  if (stage === "quiz") {
-    return <QuizScreen student={student} onComplete={handleComplete} />;
+    content = <LoginScreen onStart={handleStart} />;
+  } else if (stage === "quiz") {
+    content = <QuizScreen student={student} onComplete={handleComplete} />;
+  } else {
+    content = (
+      <ResultsScreen
+        student={student}
+        answers={answers}
+        onRestart={handleRestart}
+      />
+    );
   }
 
   return (
-    <ResultsScreen
-      student={student}
-      answers={answers}
-      onRestart={handleRestart}
-    />
+    <>
+      <DevToolsGuard />
+      {content}
+    </>
   );
 }
