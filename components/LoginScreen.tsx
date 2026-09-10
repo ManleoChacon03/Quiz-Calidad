@@ -109,7 +109,7 @@ export default function LoginScreen({
               value={carnet}
               onChange={(e) => setCarnet(formatCarnetInput(e.target.value))}
               placeholder="1190-22-0000"
-              maxLength={13}
+              maxLength={14}
               className="w-full border-b-2 border-ink/25 bg-transparent py-2 text-base text-ink font-mono outline-none focus:border-umgred transition-colors"
             />
             {touched && !carnetValid && (
