@@ -5,7 +5,7 @@ import { useState } from "react";
 import type { Student } from "@/lib/types";
 import { QUIZ_TITLE, questions } from "@/lib/questions";
 
-const CARNET_PATTERN = /^1190-22-\d{3,6}$/;
+const CARNET_PATTERN = /^1190-22-\d{1,6}$/;
 
 function formatCarnetInput(raw: string): string {
   const digits = raw.replace(/\D/g, "");
